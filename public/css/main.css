@@ -193,13 +193,19 @@ body {
   margin-bottom: 1rem;
 }
 
-#app #tasks-list-container .tasks-list .task:hover {
+#app #tasks-list-container .tasks-list .task.done {
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
+
+#app #tasks-list-container .tasks-list .task.active {
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.19);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 16px;
   -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.4px);
   -webkit-backdrop-filter: blur(2.4px);
+  color: #191919;
 }
 /*# sourceMappingURL=main.css.map */
