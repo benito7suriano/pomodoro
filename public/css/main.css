@@ -1,17 +1,205 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 body {
-  font-size: 16px;
-  background-color: red;
+  color: #ecdbba;
+  height: 100vh;
+  width: 100vw;
 }
 
-.main-container {
-  width: 100vw;
+#app {
   height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80% 20%;
+      grid-template-columns: 80% 20%;
+}
+
+#app #main-container {
+  background-color: #2d4263;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app #main-container h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+#app #main-container h3 {
+  font-family: "Lora", serif;
+}
+
+#app #main-container h5,
+#app #main-container p {
+  font-family: "Hind Madurai", sans-serif;
+}
+
+#app #mode-container {
+  margin-top: 10%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app #mode-container .mode {
+  font-size: 1.5rem;
+}
+
+#app #mode-container .mode.active {
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  color: #c84b31;
+  border: 1px solid #c84b31;
+}
+
+#app #countdown-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 5%;
+  padding-bottom: 2.5%;
+}
+
+#app #countdown-container .timer {
+  font-size: 10rem;
+  color: #c84b31;
+}
+
+#app #countdown-container .timer.colon {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#app #inspirational-container {
+  width: 80%;
+}
+
+#app #inspirational-container h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+#app #inspirational-container p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+#app #buttons-container {
+  margin-top: 5%;
+  margin-bottom: 1%;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#app #buttons-container .btn {
+  display: inline-block;
+  background: #c84b31;
+  color: #ecdbba;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+#app #buttons-container .btn:hover {
+  background: #b4432c;
+  color: #e6d1a6;
+}
+
+#app #sidebar {
+  background-image: -webkit-gradient(linear, right top, left top, from(#191919), to(#2d4263));
+  background-image: linear-gradient(to left, #191919, #2d4263);
+  font-family: "Hind Madurai", sans-serif;
+  padding: 2rem;
+}
+
+#app #sidebar h1 {
+  font-size: 2rem;
+}
+
+#app #sidebar h3 {
+  font-size: 1.25rem;
+}
+
+#app #date-and-time-container {
+  margin-top: 1%;
+  margin-bottom: 2rem;
+  color: #ecdbba;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#app #tasks-list-container .tasks-list-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#app #tasks-list-container .tasks-list-header .plus-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app #tasks-list-container .tasks-list-header .plus-container i:hover {
+  color: #c84b31;
+}
+
+#app #tasks-list-container .tasks-list .task {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+#app #tasks-list-container .tasks-list .task:hover {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
 }
 /*# sourceMappingURL=main.css.map */
