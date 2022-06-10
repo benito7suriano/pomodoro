@@ -1,0 +1,27 @@
+// -------------BUTTONS CONTAINER-----------------------
+#buttons-container {
+  margin-top: 5%;
+  margin-bottom: 1%;
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  & .btn {
+    display: inline-block;
+    background: $terciary-color;
+    color: $complementary-color;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border-color: transparent;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    &:hover {
+      background: darken($terciary-color, 5%);
+      color: darken($complementary-color, 5%);
+    }
+  }
+}

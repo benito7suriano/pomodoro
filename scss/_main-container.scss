@@ -1,0 +1,17 @@
+// -------------MAIN CONTAINER-----------------------
+#main-container {
+  background-color: $secondary-color;
+  h1 {
+    font-family: $title-font;
+  }
+  h3 {
+    font-family: $subtitle-font;
+  }
+  h5,
+  p {
+    font-family: $body-font;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

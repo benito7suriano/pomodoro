@@ -1,0 +1,13 @@
+// -------------SIDEBAR CONTAINER-----------------------
+#sidebar {
+  background-image: linear-gradient(to left, $primary-color, $secondary-color);
+  font-family: $body-font;
+  padding: 2rem;
+
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}

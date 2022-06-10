@@ -10,7 +10,7 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 4fr 1fr;
 
   // -------------MAIN CONTAINER-----------------------
   #main-container {
@@ -40,7 +40,7 @@ body {
     justify-content: center;
 
     .img-container {
-      margin: 5% auto;
+      margin: 5%;
       width: 30%;
       img {
         width: 100%;
@@ -141,6 +141,7 @@ body {
     );
     font-family: $body-font;
     padding: 2rem;
+    height: calc(100%-4rem);
 
     h1 {
       font-size: 2rem;
@@ -157,12 +158,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    height: 78px;
   }
 
   #tasks-list-container {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
+    padding: 1rem;
+    height: calc(100% - 78px - 4rem);
     & .tasks-list-header {
       display: flex;
       justify-content: space-between;
+      height: 3rem;
       & .plus-container {
         display: flex;
         align-items: center;
@@ -172,7 +183,13 @@ body {
       }
     }
     & .tasks-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 600px;
+      overflow-y: scroll;
       & .task {
+        height: 4rem;
         padding: 1rem;
         margin-bottom: 1rem;
         &.done {
