@@ -12,15 +12,27 @@ export default function Pomodoro({}) {
   let secString = seconds.toString().padStart(2, '0')
 
   useEffect(() => {
-    if (isTimerActive) {
+    let countdown = null
+    if (isTimerActive && timeLeft >= 0) {
       console.log('timer is now running.')
+      countdown = setInterval(() => {
+        setTimeLeft(timeLeft - 1)
+      }, 1000)
     } else {
       console.log('timer is now stopped.')
+      clearInterval(countdown)
     }
-  }, [isTimerActive])
+
+    return () => clearInterval(countdown)
+  }, [isTimerActive, timeLeft])
 
   const toggleTimer = () => {
     SetIsTimerActive(!isTimerActive)
+  }
+
+  const resetTimer = () => {
+    SetIsTimerActive(false)
+    setTimeLeft(timer[currentMode] * 60)
   }
 
   return (
@@ -53,7 +65,9 @@ export default function Pomodoro({}) {
         <button className='btn' onClick={() => toggleTimer()}>
           {isTimerActive ? 'pause' : 'start'}
         </button>
-        <button className='btn'>reset</button>
+        <button className='btn' onClick={() => resetTimer()}>
+          reset
+        </button>
       </div>
     </main>
   )
