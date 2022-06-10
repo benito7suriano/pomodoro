@@ -30,6 +30,32 @@ body {
     align-items: center;
   }
 
+  // -------------DONE FOR EL DÍA CONTAINER------------
+  #done-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .img-container {
+      margin: 5% auto;
+      width: 30%;
+      img {
+        width: 100%;
+      }
+    }
+
+    .msg-container {
+      width: 80%;
+      font-size: 6rem;
+      & h1 {
+        text-align: center;
+      }
+    }
+  }
+
   // -------------MODE CONTAINER-----------------------
   #mode-container {
     margin-top: 10%;

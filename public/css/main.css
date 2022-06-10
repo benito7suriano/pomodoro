@@ -40,6 +40,42 @@ body {
   font-family: "Hind Madurai", sans-serif;
 }
 
+#app #done-container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#app #done-container .img-container {
+  margin: 5% auto;
+  width: 30%;
+}
+
+#app #done-container .img-container img {
+  width: 100%;
+}
+
+#app #done-container .msg-container {
+  width: 80%;
+  font-size: 6rem;
+}
+
+#app #done-container .msg-container h1 {
+  text-align: center;
+}
+
 #app #mode-container {
   margin-top: 10%;
   width: 100%;
