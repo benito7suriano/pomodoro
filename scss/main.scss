@@ -1,4 +1,11 @@
 @import './variables';
+@import './pomodoro-container';
+@import './done-container';
+@import './mode-container';
+@import './countdown-container';
+@import './inspirational-container';
+@import './buttons-container';
+@import './sidebar-container';
 
 body {
   color: $complementary-color;
@@ -12,199 +19,29 @@ body {
   display: grid;
   grid-template-columns: 4fr 1fr;
 
-  // -------------MAIN CONTAINER-----------------------
-  #main-container {
-    background-color: $secondary-color;
-    h1 {
-      font-family: $title-font;
-    }
-    h3 {
-      font-family: $subtitle-font;
-    }
-    h5,
-    p {
-      font-family: $body-font;
-    }
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   // -------------DONE FOR EL DÍA CONTAINER------------
-  #done-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  // #done-container {
+  //   width: 100%;
+  //   height: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
 
-    .img-container {
-      margin: 5%;
-      width: 30%;
-      img {
-        width: 100%;
-      }
-    }
+  //   .img-container {
+  //     margin: 5%;
+  //     width: 30%;
+  //     img {
+  //       width: 100%;
+  //     }
+  //   }
 
-    .msg-container {
-      width: 80%;
-      font-size: 6rem;
-      & h1 {
-        text-align: center;
-      }
-    }
-  }
-
-  // -------------MODE CONTAINER-----------------------
-  #mode-container {
-    margin-top: 10%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    & .mode {
-      font-size: 1.5rem;
-      &.active {
-        padding: 0.5rem 1rem;
-        border-radius: 16px;
-        color: $terciary-color;
-        border: 1px solid $terciary-color;
-      }
-    }
-  }
-
-  // -------------COUNTDOWN CONTAINER-----------------------
-  #countdown-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5%;
-    padding-bottom: 2.5%;
-    & .timer {
-      font-size: 10rem;
-      color: $terciary-color;
-      &.colon {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-    }
-  }
-
-  // -------------INSPIRATIONAL QUOTE CONTAINER-----------------------
-  #inspirational-container {
-    width: 80%;
-    h3 {
-      font-size: 1.5rem;
-      font-style: italic;
-    }
-    p {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-    }
-  }
-
-  // -------------BUTTONS CONTAINER-----------------------
-  #buttons-container {
-    margin-top: 5%;
-    margin-bottom: 1%;
-    width: 40%;
-    display: flex;
-    justify-content: space-evenly;
-    & .btn {
-      display: inline-block;
-      background: $terciary-color;
-      color: $complementary-color;
-      padding: 0.5rem 1.5rem;
-      border-radius: 0.5rem;
-      border-color: transparent;
-      text-transform: capitalize;
-      font-size: 1.5rem;
-      letter-spacing: 0.2rem;
-      margin-top: 2rem;
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-      cursor: pointer;
-      &:hover {
-        background: darken($terciary-color, 5%);
-        color: darken($complementary-color, 5%);
-      }
-    }
-  }
-
-  // -------------SIDEBAR CONTAINER-----------------------
-  #sidebar {
-    background-image: linear-gradient(
-      to left,
-      $primary-color,
-      $secondary-color
-    );
-    font-family: $body-font;
-    padding: 2rem;
-    height: calc(100%-4rem);
-
-    h1 {
-      font-size: 2rem;
-    }
-    h3 {
-      font-size: 1.25rem;
-    }
-  }
-
-  #date-and-time-container {
-    margin-top: 1%;
-    margin-bottom: 2rem;
-    color: $complementary-color;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    height: 78px;
-  }
-
-  #tasks-list-container {
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2.4px);
-    -webkit-backdrop-filter: blur(2.4px);
-    padding: 1rem;
-    height: calc(100% - 78px - 4rem);
-    & .tasks-list-header {
-      display: flex;
-      justify-content: space-between;
-      height: 3rem;
-      & .plus-container {
-        display: flex;
-        align-items: center;
-        & i:hover {
-          color: $terciary-color;
-        }
-      }
-    }
-    & .tasks-list {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      height: 600px;
-      overflow-y: scroll;
-      & .task {
-        height: 4rem;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        &.done {
-          text-decoration-line: line-through;
-        }
-        &.active {
-          /* From https://css.glass */
-          background: rgba(255, 255, 255, 0.6);
-          border-radius: 16px;
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(2.4px);
-          -webkit-backdrop-filter: blur(2.4px);
-          color: $primary-color;
-        }
-      }
-    }
-  }
+  //   .msg-container {
+  //     width: 80%;
+  //     font-size: 6rem;
+  //     & h1 {
+  //       text-align: center;
+  //     }
+  //   }
+  // }
 }

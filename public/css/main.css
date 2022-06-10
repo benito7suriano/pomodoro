@@ -1,19 +1,4 @@
-body {
-  color: #ecdbba;
-  height: 100vh;
-  width: 100vw;
-}
-
-#app {
-  height: 100%;
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 4fr 1fr;
-      grid-template-columns: 4fr 1fr;
-}
-
-#app #main-container {
+#pomodoro-container {
   background-color: #2d4263;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,20 +12,20 @@ body {
           align-items: center;
 }
 
-#app #main-container h1 {
+#pomodoro-container h1 {
   font-family: "Montserrat", sans-serif;
 }
 
-#app #main-container h3 {
+#pomodoro-container h3 {
   font-family: "Lora", serif;
 }
 
-#app #main-container h5,
-#app #main-container p {
+#pomodoro-container h5,
+#pomodoro-container p {
   font-family: "Hind Madurai", sans-serif;
 }
 
-#app #done-container {
+#done-container {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -58,25 +43,25 @@ body {
           justify-content: center;
 }
 
-#app #done-container .img-container {
-  margin: 5%;
+#done-container .img-container {
+  margin: 5% auto;
   width: 30%;
 }
 
-#app #done-container .img-container img {
+#done-container .img-container img {
   width: 100%;
 }
 
-#app #done-container .msg-container {
+#done-container .msg-container {
   width: 80%;
   font-size: 6rem;
 }
 
-#app #done-container .msg-container h1 {
+#done-container .msg-container h1 {
   text-align: center;
 }
 
-#app #mode-container {
+#mode-container {
   margin-top: 10%;
   width: 100%;
   display: -webkit-box;
@@ -89,18 +74,18 @@ body {
           align-items: center;
 }
 
-#app #mode-container .mode {
+#mode-container .mode {
   font-size: 1.5rem;
 }
 
-#app #mode-container .mode.active {
+#mode-container .mode.active {
   padding: 0.5rem 1rem;
   border-radius: 16px;
   color: #c84b31;
   border: 1px solid #c84b31;
 }
 
-#app #countdown-container {
+#countdown-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,31 +99,31 @@ body {
   padding-bottom: 2.5%;
 }
 
-#app #countdown-container .timer {
+#countdown-container .timer {
   font-size: 10rem;
   color: #c84b31;
 }
 
-#app #countdown-container .timer.colon {
+#countdown-container .timer.colon {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-#app #inspirational-container {
+#inspirational-container {
   width: 80%;
 }
 
-#app #inspirational-container h3 {
+#inspirational-container h3 {
   font-size: 1.5rem;
   font-style: italic;
 }
 
-#app #inspirational-container p {
+#inspirational-container p {
   margin-top: 0.5rem;
   font-size: 1rem;
 }
 
-#app #buttons-container {
+#buttons-container {
   margin-top: 5%;
   margin-bottom: 1%;
   width: 40%;
@@ -150,7 +135,7 @@ body {
           justify-content: space-evenly;
 }
 
-#app #buttons-container .btn {
+#buttons-container .btn {
   display: inline-block;
   background: #c84b31;
   color: #ecdbba;
@@ -166,12 +151,12 @@ body {
   cursor: pointer;
 }
 
-#app #buttons-container .btn:hover {
+#buttons-container .btn:hover {
   background: #b4432c;
   color: #e6d1a6;
 }
 
-#app #sidebar {
+#sidebar {
   background-image: -webkit-gradient(linear, right top, left top, from(#191919), to(#2d4263));
   background-image: linear-gradient(to left, #191919, #2d4263);
   font-family: "Hind Madurai", sans-serif;
@@ -179,15 +164,15 @@ body {
   height: calc(100%-4rem);
 }
 
-#app #sidebar h1 {
+#sidebar h1 {
   font-size: 2rem;
 }
 
-#app #sidebar h3 {
+#sidebar h3 {
   font-size: 1.25rem;
 }
 
-#app #date-and-time-container {
+#date-and-time-container {
   margin-top: 1%;
   margin-bottom: 2rem;
   color: #ecdbba;
@@ -204,7 +189,7 @@ body {
   height: 78px;
 }
 
-#app #tasks-list-container {
+#tasks-list-container {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.25);
   border-radius: 16px;
@@ -216,7 +201,7 @@ body {
   height: calc(100% - 78px - 4rem);
 }
 
-#app #tasks-list-container .tasks-list-header {
+#tasks-list-container .tasks-list-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,7 +211,7 @@ body {
   height: 3rem;
 }
 
-#app #tasks-list-container .tasks-list-header .plus-container {
+#tasks-list-container .tasks-list-header .plus-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,11 +220,11 @@ body {
           align-items: center;
 }
 
-#app #tasks-list-container .tasks-list-header .plus-container i:hover {
+#tasks-list-container .tasks-list-header .plus-container i:hover {
   color: #c84b31;
 }
 
-#app #tasks-list-container .tasks-list {
+#tasks-list-container .tasks-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,18 +239,17 @@ body {
   overflow-y: scroll;
 }
 
-#app #tasks-list-container .tasks-list .task {
-  height: 4rem;
+#tasks-list-container .tasks-list .task {
   padding: 1rem;
   margin-bottom: 1rem;
 }
 
-#app #tasks-list-container .tasks-list .task.done {
+#tasks-list-container .tasks-list .task.done {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
 }
 
-#app #tasks-list-container .tasks-list .task.active {
+#tasks-list-container .tasks-list .task.active {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.6);
   border-radius: 16px;
@@ -274,5 +258,20 @@ body {
   backdrop-filter: blur(2.4px);
   -webkit-backdrop-filter: blur(2.4px);
   color: #191919;
+}
+
+body {
+  color: #ecdbba;
+  height: 100vh;
+  width: 100vw;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 1fr;
+      grid-template-columns: 4fr 1fr;
 }
 /*# sourceMappingURL=main.css.map */

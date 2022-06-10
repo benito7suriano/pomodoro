@@ -1,10 +1,9 @@
-import logo from './logo.svg'
 import './App.css'
 
 function App() {
   return (
     <>
-      <main id='main-container'>
+      <main id='pomodoro-container'>
         <div id='mode-container'>
           <h5 className='mode active'>focus</h5>
           <h5 className='mode'>short break</h5>

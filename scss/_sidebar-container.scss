@@ -3,11 +3,68 @@
   background-image: linear-gradient(to left, $primary-color, $secondary-color);
   font-family: $body-font;
   padding: 2rem;
+  height: calc(100%-4rem);
 
   h1 {
     font-size: 2rem;
   }
   h3 {
     font-size: 1.25rem;
+  }
+}
+
+#date-and-time-container {
+  margin-top: 1%;
+  margin-bottom: 2rem;
+  color: $complementary-color;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 78px;
+}
+
+#tasks-list-container {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  padding: 1rem;
+  height: calc(100% - 78px - 4rem);
+  & .tasks-list-header {
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    & .plus-container {
+      display: flex;
+      align-items: center;
+      & i:hover {
+        color: $terciary-color;
+      }
+    }
+  }
+  & .tasks-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 600px;
+    overflow-y: scroll;
+    & .task {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      &.done {
+        text-decoration-line: line-through;
+      }
+      &.active {
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2.4px);
+        -webkit-backdrop-filter: blur(2.4px);
+        color: $primary-color;
+      }
+    }
   }
 }
