@@ -4,6 +4,7 @@ import Pomodoro from './components/Pomodoro'
 import Sidebar from './components/Sidebar'
 
 function App() {
+  console.log('App rendered.')
   return (
     <>
       <Pomodoro />
