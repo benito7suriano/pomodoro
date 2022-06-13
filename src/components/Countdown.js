@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { timer } from '../timer'
+import { timerTest } from '../timer'
 export function Countdown({
   timeLeft,
   setTimeLeft,
@@ -24,7 +24,7 @@ export function Countdown({
       }
 
       setCurrentMode(switchMode(currentMode, count))
-      setTimeLeft(timer[currentMode] * 60)
+      setTimeLeft(timerTest[currentMode] * 60)
     }
   })
 

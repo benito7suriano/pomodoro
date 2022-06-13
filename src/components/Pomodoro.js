@@ -4,11 +4,11 @@ import { Countdown } from './Countdown'
 import { Modes } from './Modes'
 
 import React, { useState, useEffect } from 'react'
-import { timer } from '../timer'
+import { timerTest } from '../timer'
 
 export default function Pomodoro({}) {
   const [currentMode, setCurrentMode] = useState('focus')
-  const [timeLeft, setTimeLeft] = useState(timer[currentMode] * 60)
+  const [timeLeft, setTimeLeft] = useState(timerTest[currentMode] * 60)
   const [isTimerActive, SetIsTimerActive] = useState(false)
   const [count, setCount] = useState(1)
 
@@ -17,8 +17,8 @@ export default function Pomodoro({}) {
   }
 
   const resetTimer = () => {
-    SetIsTimerActive(!isTimerActive)
-    setTimeLeft(timer[currentMode] * 60)
+    setTimeLeft(timerTest[currentMode] * 60)
+    SetIsTimerActive(false)
   }
 
   const switchMode = (currentMode, count) => {
