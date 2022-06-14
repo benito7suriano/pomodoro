@@ -1,11 +1,9 @@
 import React from 'react'
-export default function Task({}) {
+export default function Task({ task }) {
+  let { name, status } = task
   return (
-    <div className='task'>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima,
-        adipisci!
-      </p>
+    <div className={`task ${status}`}>
+      <p>{name}</p>
     </div>
   )
 }

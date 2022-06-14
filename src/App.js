@@ -19,7 +19,7 @@ function App() {
         count={count}
         setCount={setCount}
       />
-      <Sidebar />
+      <Sidebar tasks={tasks} setTasks={setTasks} />
     </>
   )
 }

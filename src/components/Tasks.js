@@ -1,9 +1,11 @@
 import Task from './Task'
 import React from 'react'
-export default function Tasks({}) {
+export default function Tasks({ tasks }) {
   return (
     <div className='tasks-list'>
-      <Task />
+      {tasks.map((task) => {
+        return <Task key={task.id} task={task} />
+      })}
     </div>
   )
 }
