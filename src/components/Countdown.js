@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { timerTest } from '../timer'
+import { timerTest as timer } from '../timer'
 export function Countdown({
   timeLeft,
   setTimeLeft,
@@ -9,22 +9,15 @@ export function Countdown({
   setCount,
   setCurrentMode,
 }) {
-  console.log('Countdown rendered with', timeLeft, 'seconds left.')
-
   let minutes = Math.floor(timeLeft / 60)
   let seconds = timeLeft % 60
   let minString = minutes.toString().padStart(2, '0')
   let secString = seconds.toString().padStart(2, '0')
 
   useEffect(() => {
-    console.log('countdown useEffect called.')
     if (timeLeft === 0) {
-      if (currentMode === 'focus') {
-        setCount(count + 1)
-      }
-
       setCurrentMode(switchMode(currentMode, count))
-      setTimeLeft(timerTest[currentMode] * 60)
+      setTimeLeft(timer[currentMode] * 60)
     }
   })
 

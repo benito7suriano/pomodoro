@@ -1,7 +1,7 @@
 export const timerTest = {
-  focus: 0.1,
-  shortBreak: 0.1,
-  longBreak: 0.1,
+  focus: 0.05,
+  shortBreak: 0.05,
+  longBreak: 0.05,
 }
 
 export const timer = {

@@ -1,6 +1,5 @@
 import React from 'react'
 export function Modes({ currentMode }) {
-  console.log('Modes rendered.')
   return (
     <div id='mode-container'>
       <h5 className={`mode ${currentMode === 'focus' ? 'active' : ''}`}>

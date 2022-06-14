@@ -4,10 +4,20 @@ import Pomodoro from './components/Pomodoro'
 import Sidebar from './components/Sidebar'
 
 function App() {
-  console.log('App rendered.')
+  const [currentMode, setCurrentMode] = useState('focus')
+  const [isTimerActive, SetIsTimerActive] = useState(false)
+  const [count, setCount] = useState(1)
+
   return (
     <>
-      <Pomodoro />
+      <Pomodoro
+        currentMode={currentMode}
+        setCurrentMode={setCurrentMode}
+        isTimerActive={isTimerActive}
+        SetIsTimerActive={SetIsTimerActive}
+        count={count}
+        setCount={setCount}
+      />
       <Sidebar />
     </>
   )

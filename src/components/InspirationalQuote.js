@@ -1,6 +1,5 @@
 import React from 'react'
 export function InspirationalQuote({}) {
-  console.log('Quote rendered.')
   return (
     <div id='inspirational-container'>
       <h3>
