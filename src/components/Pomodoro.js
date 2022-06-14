@@ -2,6 +2,7 @@ import { Buttons } from './Buttons'
 import { InspirationalQuote } from './InspirationalQuote'
 import { Countdown } from './Countdown'
 import { Modes } from './Modes'
+import Alert from '@mui/material/Alert'
 
 import React, { useState, useEffect } from 'react'
 import { timerTest as timer } from '../timer'
@@ -13,11 +14,17 @@ export default function Pomodoro({
   SetIsTimerActive,
   count,
   setCount,
+  tasks,
 }) {
+  const [displayAlert, setDisplayAlert] = useState(false)
   const [timeLeft, setTimeLeft] = useState(timer[currentMode] * 60)
 
   const toggleTimer = () => {
-    SetIsTimerActive(!isTimerActive)
+    if (tasks.length === 0) {
+      setDisplayAlert(true)
+    } else {
+      SetIsTimerActive(!isTimerActive)
+    }
   }
 
   const resetTimer = () => {
@@ -70,10 +77,17 @@ export default function Pomodoro({
       />
       <InspirationalQuote />
       <Buttons
+        displayAlert={displayAlert}
+        setDisplayAlert={setDisplayAlert}
         toggleTimer={toggleTimer}
         resetTimer={resetTimer}
         isTimerActive={isTimerActive}
       />
+      <div className='modal'>
+        {displayAlert && (
+          <Alert severity='warning'>Please add tasks to your list first.</Alert>
+        )}
+      </div>
     </main>
   )
 }

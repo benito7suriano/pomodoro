@@ -19,6 +19,7 @@ function App() {
         SetIsTimerActive={SetIsTimerActive}
         count={count}
         setCount={setCount}
+        tasks={tasks}
       />
       <Sidebar tasks={tasks} setTasks={setTasks} />
     </>
