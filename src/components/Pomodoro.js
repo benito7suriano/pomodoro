@@ -44,10 +44,10 @@ export default function Pomodoro({
       } else {
         nextMode = 'shortBreak'
       }
+      updateTasks()
       setCount(count + 1)
     } else {
       nextMode = 'focus'
-      updateTasks()
     }
     return nextMode
   }
@@ -79,6 +79,7 @@ export default function Pomodoro({
         count={count}
         setCount={setCount}
         setCurrentMode={setCurrentMode}
+        handleToggle={handleToggle}
       />
       <InspirationalQuote />
       <Buttons

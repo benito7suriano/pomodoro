@@ -7,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 
-export default function FormDialog({ tasks, setTasks }) {
+export default function FormDialog({ tasks, setTasks, setAreTasksPending }) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState('')
 
@@ -22,6 +22,7 @@ export default function FormDialog({ tasks, setTasks }) {
       status: '',
     }
     setTasks([...tasks, newTask])
+    setAreTasksPending(true)
     setValue('')
     setOpen(false)
   }
