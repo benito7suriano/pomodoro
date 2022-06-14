@@ -8,7 +8,7 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 
 export default function FormDialog({ tasks, setTasks }) {
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState('')
 
   const handleClickOpen = () => {
@@ -19,7 +19,7 @@ export default function FormDialog({ tasks, setTasks }) {
     let newTask = {
       id: new Date().getTime().toString(),
       name: value,
-      status: 'done',
+      status: '',
     }
     setTasks([...tasks, newTask])
     setValue('')

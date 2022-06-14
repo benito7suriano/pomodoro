@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar'
 
 function App() {
   const [tasks, setTasks] = useState([])
+  const [currentTask, setCurrentTask] = useState(-1)
   const [currentMode, setCurrentMode] = useState('focus')
   const [isTimerActive, SetIsTimerActive] = useState(false)
   const [count, setCount] = useState(1)
