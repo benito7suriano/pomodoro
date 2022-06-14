@@ -4,70 +4,22 @@ import { Countdown } from './Countdown'
 import { Modes } from './Modes'
 import Alert from '@mui/material/Alert'
 
-import React, { useState, useEffect } from 'react'
-import { timerTest as timer } from '../timer'
-
 export default function Pomodoro({
+  timeLeft,
+  setTimeLeft,
+  toggleTimer,
+  resetTimer,
+  displayAlert,
+  setDisplayAlert,
+  switchMode,
   currentMode,
   setCurrentMode,
   isTimerActive,
-  SetIsTimerActive,
   count,
   setCount,
-  tasks,
-  currentTask,
-  setCurrentTask,
   handleToggle,
   updateTasks,
 }) {
-  const [displayAlert, setDisplayAlert] = useState(false)
-  const [timeLeft, setTimeLeft] = useState(timer[currentMode] * 60)
-
-  const toggleTimer = () => {
-    if (tasks.length === 0) {
-      setDisplayAlert(true)
-    } else {
-      handleToggle()
-    }
-  }
-
-  const resetTimer = () => {
-    setTimeLeft(timer[currentMode] * 60)
-    SetIsTimerActive(false)
-  }
-
-  const switchMode = (currentMode, count) => {
-    let nextMode = ''
-    if (currentMode === 'focus') {
-      if (count % 4 === 0) {
-        nextMode = 'longBreak'
-      } else {
-        nextMode = 'shortBreak'
-      }
-      updateTasks()
-      setCount(count + 1)
-    } else {
-      nextMode = 'focus'
-    }
-    return nextMode
-  }
-
-  useEffect(() => {
-    let countdown = null
-    if (isTimerActive && timeLeft > 0) {
-      countdown = setInterval(() => {
-        setTimeLeft(timeLeft - 1)
-      }, 1000)
-    } else if (isTimerActive && timeLeft === 0) {
-      clearInterval(countdown)
-    } else {
-      clearInterval(countdown)
-    }
-    return () => {
-      clearInterval(countdown)
-    }
-  }, [timeLeft, isTimerActive])
-
   return (
     <main id='pomodoro-container'>
       <Modes currentMode={currentMode} />
@@ -80,6 +32,7 @@ export default function Pomodoro({
         setCount={setCount}
         setCurrentMode={setCurrentMode}
         handleToggle={handleToggle}
+        updateTasks={updateTasks}
       />
       <InspirationalQuote />
       <Buttons

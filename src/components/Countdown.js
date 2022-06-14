@@ -8,6 +8,7 @@ export function Countdown({
   count,
   setCount,
   setCurrentMode,
+  updateTasks,
 }) {
   let minutes = Math.floor(timeLeft / 60)
   let seconds = timeLeft % 60
@@ -16,6 +17,10 @@ export function Countdown({
 
   useEffect(() => {
     if (timeLeft === 0) {
+      if (currentMode === 'focus') {
+        setCount(count + 1)
+        updateTasks()
+      }
       setCurrentMode(switchMode(currentMode, count))
       setTimeLeft(timer[currentMode] * 60)
     }

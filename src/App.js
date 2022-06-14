@@ -1,7 +1,9 @@
+import { display } from '@mui/system'
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import Pomodoro from './components/Pomodoro'
 import Sidebar from './components/Sidebar'
+import { timerTest as timer } from './timer'
 
 function App() {
   const [tasks, setTasks] = useState([])
@@ -10,6 +12,8 @@ function App() {
   const [isTimerActive, setIsTimerActive] = useState(false)
   const [areTasksPending, setAreTasksPending] = useState(false)
   const [count, setCount] = useState(1)
+  const [timeLeft, setTimeLeft] = useState(timer[currentMode] * 60)
+  const [displayAlert, setDisplayAlert] = useState(false)
 
   const updateTasks = () => {
     let activeTaskIdx = currentTask + 1
@@ -17,7 +21,7 @@ function App() {
     if (activeTaskIdx > tasks.length - 1) {
       setAreTasksPending(false)
       updatedTasks = tasks.map((task, idx) => {
-        if (idx === task.length - 1) {
+        if (idx === tasks.length - 1) {
           return { ...task, status: 'done' }
         }
         return task
@@ -37,30 +41,69 @@ function App() {
     setCurrentTask(activeTaskIdx)
   }
 
-  const handleToggle = () => {
-    if (!isTimerActive) {
-      updateTasks()
+  const toggleTimer = () => {
+    if (tasks.length === 0) {
+      setDisplayAlert(true)
+    } else {
+      if (currentTask === -1) {
+        updateTasks()
+      }
+      setIsTimerActive(!isTimerActive)
     }
-
-    setIsTimerActive(!isTimerActive)
   }
+
+  const resetTimer = () => {
+    setTimeLeft(timer[currentMode] * 60)
+    setIsTimerActive(false)
+  }
+
+  const switchMode = (currentMode, count) => {
+    let nextMode = ''
+    if (currentMode === 'focus') {
+      if (count % 4 === 0) {
+        nextMode = 'longBreak'
+      } else {
+        nextMode = 'shortBreak'
+      }
+    } else {
+      nextMode = 'focus'
+    }
+    return nextMode
+  }
+
+  useEffect(() => {
+    let countdown = null
+    if (isTimerActive && timeLeft > 0) {
+      countdown = setInterval(() => {
+        setTimeLeft(timeLeft - 1)
+      }, 1000)
+    } else if (isTimerActive && timeLeft === 0) {
+      clearInterval(countdown)
+    } else {
+      clearInterval(countdown)
+    }
+    return () => {
+      clearInterval(countdown)
+    }
+  }, [timeLeft, isTimerActive])
 
   return (
     <>
       {areTasksPending ? (
         <Pomodoro
+          timeLeft={timeLeft}
+          setTimeLeft={setTimeLeft}
+          toggleTimer={toggleTimer}
+          resetTimer={resetTimer}
+          displayAlert={displayAlert}
+          setDisplayAlert={setDisplayAlert}
+          switchMode={switchMode}
           currentMode={currentMode}
           setCurrentMode={setCurrentMode}
           isTimerActive={isTimerActive}
-          SetIsTimerActive={setIsTimerActive}
           count={count}
           setCount={setCount}
-          tasks={tasks}
-          currentTask={currentTask}
-          setCurrentTask={setCurrentTask}
-          handleToggle={handleToggle}
           updateTasks={updateTasks}
-          setAreTasksPending={setAreTasksPending}
         />
       ) : (
         <h1>Done.</h1>
