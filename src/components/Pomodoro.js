@@ -18,6 +18,7 @@ export default function Pomodoro({
   currentTask,
   setCurrentTask,
   handleToggle,
+  updateTasks,
 }) {
   const [displayAlert, setDisplayAlert] = useState(false)
   const [timeLeft, setTimeLeft] = useState(timer[currentMode] * 60)
@@ -46,6 +47,7 @@ export default function Pomodoro({
       setCount(count + 1)
     } else {
       nextMode = 'focus'
+      updateTasks()
     }
     return nextMode
   }
