@@ -15,6 +15,9 @@ export default function Pomodoro({
   count,
   setCount,
   tasks,
+  currentTask,
+  setCurrentTask,
+  handleToggle,
 }) {
   const [displayAlert, setDisplayAlert] = useState(false)
   const [timeLeft, setTimeLeft] = useState(timer[currentMode] * 60)
@@ -23,7 +26,7 @@ export default function Pomodoro({
     if (tasks.length === 0) {
       setDisplayAlert(true)
     } else {
-      SetIsTimerActive(!isTimerActive)
+      handleToggle()
     }
   }
 
