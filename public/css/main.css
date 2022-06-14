@@ -28,6 +28,7 @@
 #done-container {
   width: 100%;
   height: 100%;
+  background: #2d4263;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,17 +127,32 @@
 #buttons-container {
   margin-top: 5%;
   margin-bottom: 1%;
-  width: 40%;
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#buttons-container .btn {
-  display: inline-block;
+#buttons-container .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#buttons-container .buttons .btn {
   background: #c84b31;
   color: #ecdbba;
   padding: 0.5rem 1.5rem;
@@ -151,7 +167,7 @@
   cursor: pointer;
 }
 
-#buttons-container .btn:hover {
+#buttons-container .buttons .btn:hover {
   background: #b4432c;
   color: #e6d1a6;
 }

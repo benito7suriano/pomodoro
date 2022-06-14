@@ -18,30 +18,4 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 4fr 1fr;
-
-  // -------------DONE FOR EL DÍA CONTAINER------------
-  // #done-container {
-  //   width: 100%;
-  //   height: 100%;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   justify-content: center;
-
-  //   .img-container {
-  //     margin: 5%;
-  //     width: 30%;
-  //     img {
-  //       width: 100%;
-  //     }
-  //   }
-
-  //   .msg-container {
-  //     width: 80%;
-  //     font-size: 6rem;
-  //     & h1 {
-  //       text-align: center;
-  //     }
-  //   }
-  // }
 }

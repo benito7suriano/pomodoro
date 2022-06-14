@@ -1,9 +1,9 @@
-import { display } from '@mui/system'
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import Pomodoro from './components/Pomodoro'
 import Sidebar from './components/Sidebar'
 import { timerTest as timer } from './timer'
+import Done from './components/Done'
 
 function App() {
   const [tasks, setTasks] = useState([])
@@ -89,7 +89,7 @@ function App() {
 
   return (
     <>
-      {areTasksPending ? (
+      {/* {areTasksPending ? (
         <Pomodoro
           timeLeft={timeLeft}
           setTimeLeft={setTimeLeft}
@@ -106,8 +106,23 @@ function App() {
           updateTasks={updateTasks}
         />
       ) : (
-        <h1>Done.</h1>
-      )}
+        <Done />
+      )} */}
+      <Pomodoro
+        timeLeft={timeLeft}
+        setTimeLeft={setTimeLeft}
+        toggleTimer={toggleTimer}
+        resetTimer={resetTimer}
+        displayAlert={displayAlert}
+        setDisplayAlert={setDisplayAlert}
+        switchMode={switchMode}
+        currentMode={currentMode}
+        setCurrentMode={setCurrentMode}
+        isTimerActive={isTimerActive}
+        count={count}
+        setCount={setCount}
+        updateTasks={updateTasks}
+      />
       <Sidebar
         tasks={tasks}
         setTasks={setTasks}
