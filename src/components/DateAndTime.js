@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import dayjs from 'dayjs'
 export default function DateAndTime({}) {
-  const [today, setToday] = useState(dayjs().format(`ddd, MMM d`))
+  const [today, setToday] = useState(dayjs().format(`ddd, MMM dd`))
   const [hour, setHour] = useState(dayjs().format('HH'))
   const [minute, setMinute] = useState(dayjs().format('mm'))
 
   useEffect(() => {
     const timeId = setInterval(() => {
-      setToday(dayjs().format(`ddd, MMM d`))
+      setToday(dayjs().format(`ddd, MMM DD`))
       setHour(dayjs().format('HH'))
       setMinute(dayjs().format('mm'))
     }, 500)
