@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { timerTest as timer } from '../timer'
+import { timer } from '../timer'
 export function Countdown({
   timeLeft,
   setTimeLeft,
